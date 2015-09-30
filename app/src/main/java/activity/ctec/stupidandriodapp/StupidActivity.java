@@ -9,10 +9,12 @@ import android.widget.TextView;
 import android.widget.RelativeLayout;
 import android.view.View;
 import android.graphics.Color;
+import android.content.Intent;
 
 public class StupidActivity extends AppCompatActivity
 {
     private Button colorChangeButton;
+    private Button swapScreenButton;
     private TextView sillyText;
     private RelativeLayout background;
 
@@ -25,6 +27,7 @@ public class StupidActivity extends AppCompatActivity
         background = (RelativeLayout) findViewById(R.id.backgroundLayout);
         sillyText = (TextView) findViewById(R.id.sillyText);
         colorChangeButton = (Button) findViewById(R.id.sillyButton);
+        swapScreenButton = (Button) findViewById(R.id.swapScreenButton);
 
         setupListeners();
     }
@@ -66,6 +69,18 @@ public class StupidActivity extends AppCompatActivity
 
         background.setBackgroundColor(Color.rgb(redColor, greenColor, blueColor));
     }
+    private void changeVisibility()
+    {
+        if(sillyText.getVisibility() == View.VISIBLE)
+        {
+            sillyText.setVisibility(View.GONE);
+        }
+        else
+        {
+            sillyText.setVisibility(View.VISIBLE);
+        }
+
+    }
 
     private void setupListeners()
     {
@@ -75,6 +90,16 @@ public class StupidActivity extends AppCompatActivity
             {
                 //This is where the action happens!
                 changeBackgroundColor();
+                changeVisibility();
+            }
+        });
+        swapScreenButton.setOnClickListener(new View.OnClickListener()
+        {
+
+            public void onClick(View buttonView)
+            {
+                Intent myIntent = new Intent(buttonView.getContext(), TestActivity.class);
+                startActivityForResult(myIntent, 0);
             }
         });
     }

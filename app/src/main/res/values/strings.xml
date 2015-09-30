@@ -3,4 +3,7 @@
 
     <string name="colorChange">My app to change colors!!!</string>
     <string name="action_settings">Settings</string>
+    <string name="title_activity_test">Test Activity</string>
+    <string name="swapButtonText">Change the Screen </string>
+    <string name="otherScreen">The other Screen</string>
 </resources>

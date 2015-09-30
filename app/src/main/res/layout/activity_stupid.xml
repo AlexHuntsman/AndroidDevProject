@@ -26,4 +26,21 @@
         android:layout_alignStart="@+id/sillyButton"
         android:layout_marginBottom="45dp" />
 
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Change the Screen"
+        android:id="@+id/swapScreenButton"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/imageView"
+        android:background="@drawable/new_win_hole"
+        android:layout_below="@+id/sillyButton"
+        android:layout_centerHorizontal="true" />
+
 </RelativeLayout>
